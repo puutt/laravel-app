@@ -1,0 +1,249 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* --- Variable Warna & Tema --- */
+:root {
+    --primary-color: #ff7e67; /* Coral/Peach Cerah */
+    --primary-hover: #ff6045;
+    --accent-color: #fca5a5;  /* Soft Pastel Pink */
+    --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #f4f1ea 50%, #faedcd 100%); /* Ivory & Greige Minimalis */
+    --card-bg: rgba(255, 255, 255, 0.75); /* Kaca yang lebih transparan */
+    --text-main: #44403c; /* Abu-abu kecoklatan gelap (Greige tua) */
+    --text-muted: #78716c;
+    --shadow-glow: 0 20px 40px -15px rgba(255, 126, 103, 0.25);
+    --border-light: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Reset & Base Styling --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-main);
+    line-height: 1.7;
+    min-height: 100vh;
+    padding: 40px 15px;
+}
+
+/* --- Main Glassmorphism Card Container --- */
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 50px 40px;
+    border-radius: 32px; /* Lebih membulat agar terkesan soft */
+    box-shadow: var(--shadow-glow), 0 15px 40px rgba(0, 0, 0, 0.03);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 2px solid var(--border-light);
+}
+
+/* --- Utility Class --- */
+.text-center {
+    text-align: center;
+}
+
+/* --- Headers & Typography --- */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #292524;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+h2::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 22px;
+    background: var(--primary-color);
+    border-radius: 6px;
+}
+
+p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* --- Profile Picture Interaktif --- */
+.container img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    box-shadow: 0 10px 30px rgba(255, 126, 103, 0.25);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    margin: 15px auto 25px auto;
+}
+
+.container img:hover {
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 15px 35px rgba(252, 165, 165, 0.4);
+}
+
+/* --- Modern Blockquote --- */
+blockquote {
+    background: #fff8f6; /* Warna latar sangat soft */
+    border-left: 4px solid var(--primary-color);
+    padding: 18px 24px;
+    margin: 25px 0;
+    border-radius: 0 16px 16px 0;
+    font-style: italic;
+    color: #57534e;
+    font-weight: 500;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.01);
+}
+
+/* --- Stylized Table --- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid #f5f5f4;
+}
+
+th {
+    background: #fafaf9;
+    color: #44403c;
+    font-weight: 700;
+    padding: 16px 18px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
+    border-bottom: 2px solid #e7e5e4;
+}
+
+td {
+    padding: 14px 18px;
+    color: #57534e;
+    background: #ffffff;
+    border-bottom: 1px solid #f5f5f4;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #fffaf9; /* Sedikit sentuhan hangat saat di-hover */
+}
+
+/* --- List Hobi Modern --- */
+ul, ol {
+    padding-left: 20px;
+    margin: 15px 0 25px 0;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #57534e;
+    font-weight: 500;
+    padding-left: 5px;
+}
+
+li::marker {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* --- Player Audio --- */
+audio {
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.audio-embed {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Video Container Responsif --- */
+iframe {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin: 15px auto;
+    display: block;
+}
+
+/* --- Social Media Buttons --- */
+p.text-center a {
+    display: inline-block;
+    padding: 12px 28px;
+    margin: 6px;
+    background: #ffffff;
+    color: #44403c;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e7e5e4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+p.text-center a:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(255, 126, 103, 0.3);
+    border-color: var(--primary-color);
+}
+
+/* --- Footer --- */
+footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-top: 1px solid #e7e5e4;
+    padding-top: 25px;
+}
+
+/* --- Adaptasi Responsif (Layar HP) --- */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 20px;
+        border-radius: 24px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    iframe {
+        height: 220px;
+    }
+}
